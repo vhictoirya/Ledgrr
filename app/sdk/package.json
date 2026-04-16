@@ -1,0 +1,48 @@
+{
+  "name": "@x402-network/sdk",
+  "version": "0.1.0",
+  "description": "Merchant SDK for x402 Network — add micropayment gating to any API in minutes",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./express": {
+      "import": "./dist/express.mjs",
+      "require": "./dist/express.js",
+      "types": "./dist/express.d.ts"
+    },
+    "./next": {
+      "import": "./dist/next.mjs",
+      "require": "./dist/next.js",
+      "types": "./dist/next.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.mjs.json",
+    "dev": "tsc --watch",
+    "test": "jest --passWithNoTests"
+  },
+  "keywords": ["x402", "micropayments", "solana", "depin", "payments", "api-monetisation"],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.0"
+  },
+  "peerDependencies": {
+    "express": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": { "optional": true }
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0"
+  }
+}
